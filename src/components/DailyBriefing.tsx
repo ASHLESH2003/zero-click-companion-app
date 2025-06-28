@@ -78,7 +78,7 @@ const DailyBriefing: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-green-50 p-6">
+    <div className="min-h-screen bg-gradient-to-br from-cyan-50 to-green-50 p-6">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-gray-800 mb-4">Good Morning!</h1>
@@ -93,7 +93,8 @@ const DailyBriefing: React.FC = () => {
           
           <button
             onClick={playDailyBriefing}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-2xl text-xl font-semibold shadow-lg transition-all duration-300 transform hover:scale-105"
+            style={{ backgroundColor: '#50C2C9' }}
+            className="hover:opacity-90 text-white px-8 py-4 rounded-2xl text-xl font-semibold shadow-lg transition-all duration-300 transform hover:scale-105"
             disabled={isPlaying}
           >
             {isPlaying ? 'Playing...' : 'Play Daily Briefing'}
@@ -108,14 +109,14 @@ const DailyBriefing: React.FC = () => {
                 key={index}
                 className={`transition-all duration-500 transform ${
                   currentSection === index && isPlaying 
-                    ? 'scale-105 ring-4 ring-blue-400 bg-blue-50' 
+                    ? 'scale-105 ring-4 ring-cyan-400 bg-cyan-50' 
                     : 'hover:scale-102'
                 } shadow-lg`}
               >
                 <CardContent className="p-8">
                   <div className="flex items-start gap-6">
-                    <div className="bg-blue-100 p-4 rounded-full">
-                      <Icon className="w-8 h-8 text-blue-600" />
+                    <div style={{ backgroundColor: '#50C2C920' }} className="p-4 rounded-full">
+                      <Icon className="w-8 h-8" style={{ color: '#50C2C9' }} />
                     </div>
                     <div className="flex-1">
                       <h3 className="text-2xl font-bold text-gray-800 mb-4">{section.title}</h3>

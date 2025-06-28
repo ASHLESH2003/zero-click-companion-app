@@ -41,7 +41,8 @@ const SimpleNavigation: React.FC<NavigationProps> = ({ currentPage, onNavigate }
               speechSynthesis.speak(new SpeechSynthesisUtterance("Say where you want to go: Home, Daily, Medicine, Emergency, or Caregiver"));
             }
           }}
-          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full flex items-center gap-2 text-sm font-medium transition-colors duration-200"
+          style={{ backgroundColor: '#50C2C9' }}
+          className="hover:opacity-90 text-white px-6 py-2 rounded-full flex items-center gap-2 text-sm font-medium transition-colors duration-200"
         >
           <Volume2 className="w-4 h-4" />
           Voice Navigation
@@ -60,9 +61,10 @@ const SimpleNavigation: React.FC<NavigationProps> = ({ currentPage, onNavigate }
               onClick={() => onNavigate(item.id)}
               className={`flex flex-col items-center gap-2 p-3 rounded-2xl transition-all duration-300 ${
                 isActive 
-                  ? 'bg-blue-100 text-blue-600 scale-110' 
+                  ? 'scale-110' 
                   : 'text-gray-600 hover:bg-gray-50 hover:text-gray-800'
               }`}
+              style={isActive ? { backgroundColor: '#50C2C920', color: '#50C2C9' } : {}}
             >
               <Icon className="w-8 h-8" />
               <span className="text-sm font-medium">{item.label}</span>

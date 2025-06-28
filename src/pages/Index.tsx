@@ -86,7 +86,7 @@ const HomePage: React.FC<{
       id: 'daily',
       title: 'Daily Briefing',
       subtitle: 'News, weather, horoscope',
-      color: 'bg-blue-500',
+      color: '#50C2C9',
       icon: '📰',
       voice: 'daily briefing'
     },
@@ -117,7 +117,7 @@ const HomePage: React.FC<{
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-green-50 p-6">
+    <div className="min-h-screen bg-gradient-to-br from-cyan-50 to-green-50 p-6">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -129,7 +129,7 @@ const HomePage: React.FC<{
           </p>
           
           {/* Current Time */}
-          <div className="text-3xl font-semibold text-blue-600 mb-8">
+          <div className="text-3xl font-semibold mb-8" style={{ color: '#50C2C9' }}>
             {new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
           </div>
         </div>
@@ -140,7 +140,10 @@ const HomePage: React.FC<{
             <button
               key={action.id}
               onClick={() => onNavigate(action.id)}
-              className={`${action.color} hover:opacity-90 text-white p-8 rounded-3xl shadow-2xl transform transition-all duration-300 hover:scale-105 active:scale-95`}
+              className={`hover:opacity-90 text-white p-8 rounded-3xl shadow-2xl transform transition-all duration-300 hover:scale-105 active:scale-95 ${
+                action.id === 'daily' ? '' : action.color
+              }`}
+              style={action.id === 'daily' ? { backgroundColor: action.color } : {}}
             >
               <div className="text-6xl mb-4">{action.icon}</div>
               <h3 className="text-2xl font-bold mb-2">{action.title}</h3>
@@ -152,8 +155,8 @@ const HomePage: React.FC<{
         {/* Voice Instructions */}
         <div className="bg-white rounded-2xl p-8 shadow-lg">
           <div className="flex items-center gap-4 mb-6">
-            <div className="bg-blue-100 p-3 rounded-full">
-              <Volume2 className="w-8 h-8 text-blue-600" />
+            <div className="p-3 rounded-full" style={{ backgroundColor: '#50C2C920' }}>
+              <Volume2 className="w-8 h-8" style={{ color: '#50C2C9' }} />
             </div>
             <h3 className="text-2xl font-bold text-gray-800">Voice Commands</h3>
           </div>
