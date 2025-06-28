@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Calendar, Sun, Heart, News } from 'lucide-react';
+import { Calendar, Sun, Heart, Newspaper, Volume2 } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import VoiceButton from './VoiceButton';
 
@@ -36,7 +36,7 @@ const DailyBriefing: React.FC = () => {
   const sections = [
     { icon: Calendar, title: "Today's Date", content: briefingData.date },
     { icon: Sun, title: "Weather", content: briefingData.weather },
-    { icon: News, title: "News", content: briefingData.news.join('. ') },
+    { icon: Newspaper, title: "News", content: briefingData.news.join('. ') },
     { icon: Sun, title: "Horoscope", content: briefingData.horoscope },
     { icon: Heart, title: "Health Tip", content: briefingData.healthTip }
   ];
