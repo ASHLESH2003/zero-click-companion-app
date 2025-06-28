@@ -13,6 +13,10 @@ export const useVoiceCommands = (setCurrentPage: (page: string) => void) => {
       setCurrentPage('emergency');
     } else if (lowerCommand.includes('caregiver') || lowerCommand.includes('family') || lowerCommand.includes('dashboard')) {
       setCurrentPage('caregiver');
+    } else if (lowerCommand.includes('login') || lowerCommand.includes('sign in')) {
+      setCurrentPage('login');
+    } else if (lowerCommand.includes('signup') || lowerCommand.includes('sign up') || lowerCommand.includes('register')) {
+      setCurrentPage('signup');
     } else if (lowerCommand.includes('home') || lowerCommand.includes('main')) {
       setCurrentPage('home');
     }
